@@ -2,36 +2,7 @@
 
 <!-- A virtual **skincare advisor** that uses **Machine Learning** to analyse user's selfie and offer personalised products **recommendation** based on the skin metrics inferred. -->
 
-_An application that recommends personalised skincare and makeup products based on the skin metrics inferred from user’s selfie,
-using Computer Vision algorithms._ **Image processing and CNN models** were utilized in the extraction of Skin Tone, Skin Type and
-Acne concern level. With these data points, products with high **cosine-similarity** were recommended in the order of their relevance.
-The web application was written in React-Flask.
-
-# Web Application
-
-## Frontend Routes
-
-`/` - [ImageInput](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/frontend/src/views/imageInput.jsx)
-
-This is the initial page, the user is prompted to take a selfie. Once the user grants permission to use their device's camera, a realtime video of their camera (profile : user) runs in 4:3 aspect ratio. To ensure that the image is taken with precautions such as _only one face is there in the image_, _proper luminance_ and that the _majority of the image is populated by the user’s face_, **Face recogniton** was implemented using [face-api.js](https://github.com/justadudewhohacks/face-api.js/). The user is given text prompts as directions. When the user takes a selfie, is then redirected to `/form`.
-
-`/form` - [Form](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/frontend/src/views/Form.jsx)
-
-The results of the skin metrics inferred from the user's selfie are presented as prefilled form elements. User can alter these values, along with selecting their other skin concerns from the given list. Once the form is submitted, the page is redirected to `/recs`.
-
-`/recs` - [Recommendations](https://github.com/Randon-Myntra-HackerRamp-21/CV-skin-care-recommendation/blob/main/frontend/src/views/Recommendations.jsx)
-
-Here the recommended products are presented in the form of cards, with their details. The cards when clicked redirect to their appropriate product page.
-
-## Backend Routes
-
-**[PUT]**`/upload`
-
-Accepts a base64 image, converts it into png and feeds that into the pipeline yielding predictions for skin tone, type and acne, and returns these attributes in JSON format.
-
-**[PUT]**`/recommend`
-
-Accepts request body containing details about the user's skin type, tone, and concerns, and returns top 5 recommended skincare products from each category in JSON format.
+Combining the power of analytics and skincare, Skin-Metrics evaluates skin health metrics to help users achieve a natural glow by better understanding their skin needs, while also providing clear insights and personalized recommendations for improvement.
 
 # Models
 
